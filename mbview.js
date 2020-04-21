@@ -2,6 +2,7 @@
 'use strict';
 
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const MBTiles = require('@mapbox/mbtiles');
 const q = require('d3-queue').queue();
@@ -10,6 +11,7 @@ const objectAssign = require('object-assign');
 
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
+app.use(cors());
 app.use(express.static('public'));
 
 module.exports = {
