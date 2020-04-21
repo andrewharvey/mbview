@@ -36,6 +36,7 @@ module.exports.usage = function () {
   u.push(' --port sets port to use (default: 3000)');
   u.push(' --quiet or -q supress all logging except the address to visit');
   u.push(' -n don\'t automatically open the browser on start');
+  u.push(' --cors Add CORS Access-Control-Allow-Origin header (default: false)');
   u.push(' --basemap, --base or --map sets the basemap style (default: dark)');
   u.push(' --version returns module version');
   u.push(' --help prints this message');

@@ -11,7 +11,6 @@ const objectAssign = require('object-assign');
 
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
-app.use(cors());
 app.use(express.static('public'));
 
 module.exports = {
@@ -58,6 +57,10 @@ module.exports = {
   },
 
   listen: function (config, onListen) {
+    if (config.cors) {
+      app.use(cors());
+    }
+
     const format = config.tiles._info.format;
 
     app.get('/', (req, res) => {

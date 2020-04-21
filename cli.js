@@ -4,7 +4,7 @@
 'use strict';
 
 const argv = require('minimist')(process.argv.slice(2), {
-  boolean: ['n', 'quiet', 'q']
+  boolean: ['n', 'quiet', 'q', 'cors']
 });
 const open = require('open');
 const fs = require('fs');
@@ -43,6 +43,7 @@ const params = {
   port: argv.port || 3000,
   zoom: 12,
   quiet: argv.q || argv.quiet,
+  cors: argv.cors,
   basemap: argv.basemap,
   accessToken: accessToken
 };
